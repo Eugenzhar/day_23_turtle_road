@@ -1,5 +1,5 @@
 import random
-import time
+import scoreboard
 from turtle import Turtle
 
 
@@ -17,6 +17,7 @@ class Cars(Turtle):
         self.color(random.choice(COLORS))
         self.setheading(180)
         self.goto(300, random.randint(-250, 250))
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
         if random.randint(1, 7) == 1:
@@ -25,5 +26,10 @@ class Cars(Turtle):
 
     def move_car(self):
         for car in self.all_cars:
-            car.forward(STARTING_MOVE_DISTANCE)
+            car.forward(self.car_speed)
+
+    def speed(self):
+        self.car_speed += MOVE_INCREMENT
+
+
 

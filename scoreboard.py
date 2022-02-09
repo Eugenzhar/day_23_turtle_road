@@ -14,6 +14,7 @@ class Scoreboard(Turtle):
         self.hideturtle()
 
     def update_level(self):
+        self.clear()
         self.write(f"Level {self.level}", False, align='center', font=FONT)
         print("work")
 

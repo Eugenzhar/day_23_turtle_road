@@ -27,6 +27,16 @@ while game_is_on:
     car.move_car()
     lvl.update_level()
 
+#detect turtle crossed the road
+    if tim.ycor() > 280:
+        lvl.level += 1
+        car.speed()
+        tim.go_to_start()
+# detect turtle crush by car
+
+
+
+
 
 
 screen.exitonclick()
